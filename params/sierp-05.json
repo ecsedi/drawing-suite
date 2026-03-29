@@ -1,0 +1,9 @@
+{
+  "type":            "sierpinski",
+  "bg_color":        "antiquewhite",
+  "line_color":      "darkslategray",
+  "line_width":      2,
+  "iteration_depth": 5,
+  "resolution":      1000000,
+  "imagefile":       "images/sierp-05.ppm"
+}

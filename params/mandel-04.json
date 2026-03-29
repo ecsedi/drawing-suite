@@ -1,0 +1,10 @@
+{
+  "type":       "mandelbrot",
+  "corner1":    [0.275,-0.025],
+  "corner2":    [0.325, 0.025],
+  "maxiter":    255,
+  "resolution": 1000000,
+  "palgenseed": 1753413148,
+  "imagefile":  "images/mandel-04.ppm",
+  "comment":    "Elephant valley"
+}

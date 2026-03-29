@@ -1,0 +1,10 @@
+{
+  "type":       "mandelbrot",
+  "corner1":    [-0.75, 0.05],
+  "corner2":    [-0.70, 0.15],
+  "maxiter":    255,
+  "resolution": 1000000,
+  "palgenseed": 1753413148,
+  "imagefile":  "images/mandel-05.ppm",
+  "comment":    "Seahorse valley"
+}

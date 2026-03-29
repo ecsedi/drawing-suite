@@ -1,0 +1,9 @@
+{
+  "type":            "koch",
+  "bg_color":        "steelblue",
+  "line_color":      "yellow",
+  "line_width":      2,
+  "iteration_depth": 6,
+  "resolution":      1000000,
+  "imagefile":       "images/koch-06.ppm"
+}

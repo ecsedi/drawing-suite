@@ -1,0 +1,10 @@
+{
+  "type":       "mandelbrot",
+  "corner1":    [-2.5,-1.25],
+  "corner2":    [ 1.0, 1.25],
+  "maxiter":    255,
+  "resolution": 1000000,
+  "palgenseed": 1753413148,
+  "imagefile":  "images/mandel-02.ppm",
+  "comment":    "Full set"
+}
