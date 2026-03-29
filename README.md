@@ -25,6 +25,7 @@ language, like:
 - method overriding
 - abstract base classes
 - polymorphism
+- lambda expressions
 - concepts
 - JSON serialization/deserialization
 
