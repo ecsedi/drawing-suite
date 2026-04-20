@@ -22,8 +22,8 @@
  * @brief A 2D pixel canvas backed by a Matrix of RGB colors.
  *
  * Wraps Matrix<RGB> and adds coordinate-space pixel access (x, y) as well
- * as PPM file I/O.  Pixel (0,0) is the bottom-left of the canvas; x grows
- * right, y grows up, matching the mathematical convention used elsewhere in
+ * as PPM file I/O.  Pixel (0,0) is the top-left of the canvas; x grows
+ * right, y grows down, matching the mathematical convention used elsewhere in
  * this project.
  *
  * Out-of-bounds writes through operator() and operator[] are silently

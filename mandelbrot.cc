@@ -264,7 +264,7 @@ void genMandel(const json & mpjson) {
 
   MandelParams mp = mpjson.get<MandelParams>();
   ComplexGrid  grid(mp.corner1, mp.corner2, mp.resolution);
-  Canvas       canvas(grid.width(), grid.height(), mp.maxiter);
+  Canvas       canvas(grid.width(), grid.height()); // max color component defaults to 255
   Palette      palette = generateRandomPalette(mp.maxiter+1, mp.palgenseed);
 
   ComplexGrid::size_type n = 0;

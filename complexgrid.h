@@ -136,7 +136,7 @@ public:
    * @brief Return the requested resolution.
    * @return Approximate total node count passed to the constructor.
    */
-  complex resolution() const {
+  unsigned long resolution() const {
     return res;
   }
 

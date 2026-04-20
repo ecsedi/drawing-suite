@@ -85,7 +85,7 @@ in row-major order.
 
 Defines a 2D pixel canvas based on a Matrix of RGB colors. Pixel access is
 possible with either (x,y) coordinates or Position objects. Implements PPM file
-I/O. Pixel (0,0) is the bottom-left of the canvas; x grows right, y grows up,
+I/O. Pixel (0,0) is the top-left of the canvas; x grows right, y grows down,
 matching the mathematical convention used elsewhere in this project.
 Out-of-bounds writes through operator() and operator[] are silently discarded
 (written to an offscreen pixel sink). Use at() when you want a bounds-checking
