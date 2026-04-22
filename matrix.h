@@ -206,10 +206,9 @@ template <typename T>
 inline std::ostream & operator << (std::ostream & os, const Matrix<T> & mat) {
 
   for (typename Matrix<T>::size_type i = 0; i < mat.rows(); ++i) {
-    if (i) { os << "\n"; }
+    os << (i ? "\n" : "");
     for (typename Matrix<T>::size_type j = 0; j < mat.cols(); ++j) {
-      if (j) { os << " "; }
-      os << mat(i, j);
+      os << (j ? " " : "") << mat(i, j);
     }
   }
 

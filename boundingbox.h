@@ -12,9 +12,6 @@
 #include <stdexcept>
 #include <initializer_list>
 
-class BoundingBox;
-std::ostream & operator << (std::ostream &, const BoundingBox &);
-
 /**
  * @brief Describes a 2D screen resolution in pixels.
  */
@@ -74,21 +71,9 @@ public:
    * @brief Construct as the bounding box of an initializer list of positions.
    * @param poslist List of positions to enclose. An empty list yields an empty box.
    */
-  BoundingBox(std::initializer_list<Position> poslist) {
-
-    if (poslist.size() < 1) {
-      is_empty = true;
-    }
-
-    else {
-      is_empty = false;
-      corner1 = corner2 = *(poslist.begin()); // there is no poslist[0]
-      for (auto const & p : poslist) {
-        corner1.x = std::min(corner1.x, p.x);
-        corner1.y = std::min(corner1.y, p.y);
-        corner2.x = std::max(corner2.x, p.x);
-        corner2.y = std::max(corner2.y, p.y);
-      }
+  BoundingBox(std::initializer_list<Position> poslist) : is_empty(true) {
+    for (auto & pos : poslist) {
+      *this += pos;
     }
   }
 
@@ -96,21 +81,9 @@ public:
    * @brief Construct as the bounding box of a vector of positions.
    * @param poslist Vector of positions to enclose. An empty vector yields an empty box.
    */
-  BoundingBox(const std::vector<Position> & poslist) {
-
-    if (poslist.size() < 1) {
-      is_empty = true;
-    }
-
-    else {
-      is_empty = false;
-      corner1 = corner2 = poslist[0];
-      for (auto const & p : poslist) {
-        corner1.x = std::min(corner1.x, p.x);
-        corner1.y = std::min(corner1.y, p.y);
-        corner2.x = std::max(corner2.x, p.x);
-        corner2.y = std::max(corner2.y, p.y);
-      }
+  BoundingBox(const std::vector<Position> & poslist) : is_empty(true) {
+    for (auto & pos : poslist) {
+      *this += pos;
     }
   }
 
@@ -177,8 +150,8 @@ public:
   BoundingBox & operator += (const Position & p) {
 
     if (is_empty) {
-      corner1  = corner2 = p;
       is_empty = false;
+      corner1  = corner2 = p;
     }
     else {
       corner1.x = std::min(corner1.x, p.x);
